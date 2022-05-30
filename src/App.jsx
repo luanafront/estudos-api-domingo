@@ -26,6 +26,7 @@ function App() {
     axios.post("https://62913677665ea71fe142a512.mockapi.io/api/v1/login/", data).then((res)=> {
       let token = res.data.token
       localStorage.setItem("token", token)
+      setLogged(true)
     })
   }
   useEffect(() => {
@@ -34,6 +35,10 @@ function App() {
       setLogged(true)
     }
   }, []) 
+  const logout = () => {
+    localStorage.clear()
+    setLogged(false)
+  }
 
 
   return (
@@ -57,14 +62,25 @@ function App() {
           value={password}
           margin="normal"
         />
-        <Button 
-          style={{
-            marginTop: 9 
-          }}
-          variant="outlined"
-          onClick={sendLoginData}
-        >Login
-        </Button>
+        <div className='botoes'>
+          <Button 
+            style={{
+              margin: 9 
+            }}
+            variant="outlined"
+            onClick={sendLoginData}
+          >Login
+          </Button>
+          <Button 
+            style={{
+              margin: 9 
+            }}
+            variant="outlined"
+            onClick={logout}
+          >Logout
+          </Button>
+        </div>
+        <p className='mensagem'>{logged ? "You are logged!" : "You aren't logged!"}</p>
         <a href="https://github.com/luanafront/estudos-api-domingo">
           <img alt="aprendendo" className='imagem__github' src={github}/> 
         </a>
