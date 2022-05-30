@@ -2,7 +2,8 @@ import './App.css';
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import { TextField ,  Button } from '@mui/material/';
-import imagem1 from "./programador.png"
+import imagem1 from "./programador.png";
+import github from "./github.png";
 
 function App() {
   const [email, setEmail] = useState("")
@@ -64,6 +65,9 @@ function App() {
           onClick={sendLoginData}
         >Login
         </Button>
+        <a href="https://github.com/luanafront/estudos-api-domingo">
+          <img alt="aprendendo" className='imagem__github' src={github}/> 
+        </a>
     </div>
   );
 }
