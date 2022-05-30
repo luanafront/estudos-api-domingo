@@ -2,6 +2,7 @@ import './App.css';
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import { TextField ,  Button } from '@mui/material/';
+import imagem1 from "./programador.png"
 
 function App() {
   const [email, setEmail] = useState("")
@@ -36,6 +37,7 @@ function App() {
 
   return (
     <div className="App">
+         <img alt="aprendendo" className='imagem__aprendendo' src={imagem1}/>
         <TextField 
           id="standard-basic" 
           label="Email" 
@@ -55,7 +57,9 @@ function App() {
           margin="normal"
         />
         <Button 
-          className='button'
+          style={{
+            marginTop: 9 
+          }}
           variant="outlined"
           onClick={sendLoginData}
         >Login

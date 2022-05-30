@@ -1,5 +1,9 @@
 body {
-  color: rgb(116, 116, 196);
+  background-color: #e9effa;
+}
+.imagem__aprendendo {
+  height: 100px;
+  margin-bottom: 30px;
 }
 .App {
   display: flex;
@@ -8,6 +12,4 @@ body {
   justify-content: center;
   min-height: 100vh;
 }
-.button {
-  margin-top: 7px;
-}
+
